@@ -6,10 +6,11 @@ resource "google_project_service" "datastore" {
 resource "google_storage_bucket" "datastore_bucket" {
   name     = "${var.env}-datastore-index-bucket"
   location = var.region
+  project  = var.project_id
 }
 
 resource "google_storage_bucket_object" "datastore_index_yaml" {
-  bucket = google_storage_bucket.datastore_bucket.name
-  name   = "index.yaml"
-  source = var.index_yaml_path
+  bucket  = google_storage_bucket.datastore_bucket.name
+  name    = "index.yaml"
+  source  = var.index_yaml_path
 }
