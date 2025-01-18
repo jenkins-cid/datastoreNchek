@@ -1,0 +1,11 @@
+indexes:
+  - kind: "Task"
+    properties:
+      - name: "created"
+        direction: "ascending"
+      - name: "priority"
+        direction: "descending"
+  - kind: "Task"
+    properties:
+      - name: "status"
+        direction: "ascending"
